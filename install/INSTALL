@@ -1,0 +1,25 @@
+Virtual Framebuffer Device Driver
+
+Used for creating nonpaged contigous memory buffer and make
+userspace program to access this one, request physical, logical
+and userspace address of this buffer.
+
+Userspace address is used to direct access to this buffer from
+user-mode application (in my case to store rendered or trascoded
+video frame).
+
+Physical address is used to submitting to VideoOuput device DMA
+controller, to make fast transfer framebuffer data from system 
+memory into hardware PCI device allocated framebuffer.
+
+First version is poor-drafted. static 4MB buffer should be allocated.
+
+Installation:
+     1. Start->Setting->Control Panel->Add/Remove Hardware
+     2. "Add/Troubleshot device"
+     3. "Add a new device"
+     4. "No, I want to select the hardware from a list"
+     5. Hardware type "Other Devices"
+     6. Have Disk.....
+     7. Restart PC
+
